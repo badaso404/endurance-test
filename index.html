@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Endurance-Test</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="menu-btn">
+          <p>Holla cretivox</p>
+        </div>
+        <div class="logo">
+          <a href="#">It's Me </a>
+        </div>
+        <div class="local-time">
+          <div id="current-time"></div>
+        </div>
+      </nav>
+
+      <footer>
+        <p>for Endurance-Test</p>
+        <p>Introducting</p>
+      </footer>
+
+      <div class="items">
+        <div class="item"><p>Nama</p></div>
+        <div class="item"><p>Umur</p></div>
+        <div class="item"><p>Kuliah</p></div>
+        <div class="item"><p>Divisi</p></div>
+        <div class="item"><p>Hidden Talent</p></div>
+        <div class="item"><p>cretivox</p></div>
+      </div>
+
+      <div class="preview-bg">
+        <img src="/assets/bg-1.jpg" alt="" />
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script>
+      const timeElement = document.getElementById("current-time");
+
+      function updateTime() {
+        const now = new Date();
+
+        const optionsTime = {
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+        };
+        const currentTime = now.toLocaleTimeString("en-US", optionsTime);
+        timeElement.textContent = currentTime;
+      }
+
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
